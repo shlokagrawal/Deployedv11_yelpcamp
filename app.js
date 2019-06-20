@@ -17,7 +17,15 @@ var campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
 
 
-mongoose.connect("mongodb://localhost/yelp_camp_v9",{useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost/yelp_camp_v9",{useNewUrlParser: true});
+mongoose.connect('mongodb+srv://shlokagrawal:Shlok@123@cluster0-ua7xp.mongodb.net/test?retryWrites=true&w=majority',{
+    useNewUrlParser: true,
+    useCreateIndex: true
+}).then(function(){
+    console.log("Connected To MongoDB Atlas Cloud Database!");//mongoDB cloud database as service
+}).catch(err => {
+    console.log("ERROR:",err.message);
+});
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
