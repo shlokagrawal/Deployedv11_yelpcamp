@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start" : "mongod",
+    "start2": "node app.js"
   },
   "author": "Shlok Agrawal",
   "license": "ISC",
